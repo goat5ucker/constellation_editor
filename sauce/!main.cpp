@@ -19,7 +19,7 @@ void update_on_resize(sf::RenderWindow *window)
     
     std::cout << _ws.x << " " << _ws.y << std::endl;
     
-    _sfview_flat = sf::View({sf::Vector2f(_ws.x / 2.f,_ws.y / 2.f), _ws});
+    _sfview_flat = {sf::Vector2f(_ws.x / 2.f,_ws.y / 2.f), _ws};
     window->setView(_sfview_flat);
 }
 
