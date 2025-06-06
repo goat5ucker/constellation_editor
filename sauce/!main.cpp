@@ -5,7 +5,6 @@
 #include <iostream>
 /* WOO WINDOWS PLATFORM CORNER */ // #include <windows.h>
 
-#include "font.hpp"
 #include "databus.hpp"
 #include "imgui_markup.hpp"
 #include "sfml_markup.hpp"
@@ -37,7 +36,7 @@ int main()
     window.setMinimumSize(sf::Vector2u(800u,600u));
     window.setFramerateLimit(90);
 
-    if (!ImGui::SFML::Init(window, false))
+    if (!ImGui::SFML::Init(window, true))
         return -1;
     init(&window);
 
