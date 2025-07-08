@@ -1,10 +1,8 @@
 cmake_minimum_required(VERSION 3.28)
-project(CMakeSFMLProject LANGUAGES CXX)
+project(constellation_editor LANGUAGES CXX)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ../output)
-set(CMAKE_C_COMPILER:FILEPATH=C:/msys64/ucrt64/bin/gcc.exe)
-set(CMAKE_CXX_COMPILER:FILEPATH=C:/msys64/ucrt64/bin/g++.exe)
 
 include(FetchContent)
 FetchContent_Declare(SFML

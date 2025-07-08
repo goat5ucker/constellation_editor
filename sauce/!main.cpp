@@ -2,7 +2,6 @@
 #include <SFML/Graphics.hpp>
 #include <imgui-SFML.h>
 #include <imgui.h>
-#include <iostream>
 /* WOO WINDOWS PLATFORM CORNER */ // #include <windows.h>
 
 #include "databus.hpp"
@@ -16,7 +15,7 @@ void update_on_resize(sf::RenderWindow *window)
 {
     sf::Vector2f _ws = sf::Vector2f((float)window->getSize().x, (float)window->getSize().y);
     
-    std::cout << _ws.x << " " << _ws.y << std::endl;
+    // std::cout << _ws.x << " " << _ws.y << std::endl;
     
     _sfview_flat = {sf::Vector2f(_ws.x / 2.f,_ws.y / 2.f), _ws};
     window->setView(_sfview_flat);
@@ -34,7 +33,8 @@ int main()
 
     auto window = sf::RenderWindow(sf::VideoMode({1280u, 720u}), "Constellation Editor");
     window.setMinimumSize(sf::Vector2u(800u,600u));
-    window.setFramerateLimit(90);
+    window.setFramerateLimit(144);
+    window.setVerticalSyncEnabled(true);
 
     if (!ImGui::SFML::Init(window, true))
         return -1;
@@ -58,8 +58,8 @@ int main()
         imgui_markup::calc_loop();
         sfml_markup::calc_loop(&window);
 
-        window.clear();
-        window.draw(sfml_markup::big_ass_title);
+        window.clear(sf::Color(59,66,82));
+        sfml_markup::draw_loop(&window);
         ImGui::SFML::Render(window);
         window.display();
 
